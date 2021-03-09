@@ -8,7 +8,7 @@ class MAFilter{
     private: 
         int window_size; 
         //using an array is more optimal than std::vector 
-        //time complexity should be ~2n 
+        //time complexity: ~2n 
 
     public: 
         //Recommended window size would be < 5 to prevent time from being above 100 mS delayed
