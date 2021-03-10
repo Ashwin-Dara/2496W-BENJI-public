@@ -11,19 +11,15 @@ float PID::calculate_power(int set_point, int sensor, int i_bound){
     int error = set_point - sensor; 
     float p_power = error * kP; 
 
-
     if(abs(error) < i_bound){
         integral += error; 
     }
     else{
         integral = 0; 
     }
-
     float i_power = std::min((float) (integral * kI), PID_MAX_INTEGRAL); 
 
-
     pros::delay(50); 
-
 
     int delta_error = (set_point - sensor) - error; 
     float d_power = delta_error * kD; 
@@ -33,7 +29,6 @@ float PID::calculate_power(int set_point, int sensor, int i_bound){
     else{
         movement_settled = false; 
     }
-
 
     float pid_power = p_power + i_power + d_power; 
     float delta_power = pid_power - current_power; 
@@ -49,6 +44,7 @@ float PID::calculate_power(int set_point, int sensor, int i_bound){
     else if(!using_slew){
         current_power = pid_power;
     }
+    
     return std::min((float) current_power, PID_MAX_VOLTAGE); 
 }
 
