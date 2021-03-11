@@ -8,11 +8,10 @@ The robot consists of various subsystem and the specific controllers we will be 
 
 ## Subsystem Configurations
 
-Chassis: x4 200RPM Motors with a speed gear ratio (5:3). Wheel size is 3.25 omni wheels.
+Chassis: x4 200RPM Motors with a speed gear ratio (5:3). Wheel size is 3.25 omni-wheels (middle sized omni-wheels). 
 Indexer: 200RPM Motor running a customed printed sprocket with a 5.5 inch diameter. Rubber bands are looped around the sprocket to use it as a roller. 
 Intakes: x2 600RPM Motors situated on the front of the chassis. 
 "Fly-Wheel": 600RPM Motor running a roller on the top of our robot's tower. 
-
 
 
 
