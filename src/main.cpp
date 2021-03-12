@@ -1,6 +1,7 @@
 #include "main.h"
 #include "../include/lib/Drive.h"
 #include "../include/lib/Config.h"
+#include "../include/lib/Intake.h"
 
 void on_center_button() {
 	static bool pressed = false;
@@ -74,10 +75,9 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-
 	while (true) {
 		Chassis::opcontrol(); 
-
+		Intake::opcontrol(); 
 		pros::delay(20);
 	}
 }

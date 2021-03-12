@@ -1,10 +1,20 @@
 #include "main.h"
 #include "../include/lib/Intake.h"
 
+
 namespace Intake{
-    ball_shoot_queue = 0; 
+    int ball_shoot_queue = 0; 
+    bool start_task = false; 
+    bool R1 = false;
+    bool R2 = false;  
 
     void opcontrol(){
+        
+        if(!start_task){
+            pros::Task ASM_task(Intake::ASM);
+            start_task = true; 
+        }
+
         if(controller.get_digital(DIGITAL_L1)){
             intake_move(INTAKE_MAX_VOLTAGE);
             index(1);
@@ -38,19 +48,33 @@ namespace Intake{
         outake.move(0);
     }
 
-    void ASM(){ //needs to be put into a seperate thread
-        
-        if(controller.get_digital(DIGITAL_R1) && !R1){
-            ball_shoot_queue++; 
+    void ASM(void* param){ 
+        while(1){
+            if(controller.get_digital(DIGITAL_R1) && !R1){
+                Intake::ball_shoot_queue++; 
+            }
+            if(controller.get_digital(DIGITAL_R2) && !R2 && ball_shoot_queue > 0){
+                for(int i = 0; i < ball_shoot_queue; ++i){
+                 if(i + 1 == ball_shoot_queue){
+                        outake.move(127);
+                        pros::delay(650); //time was tuned
+                        outake.move(0);
+                        index(1);
+                        pros::delay(400); 
+                        sis(); 
+                    }
+                 else{
+                        outake.move(127); 
+                        pros::delay(650);
+                        outake.move(0);
+                        while(line_sensor.get_value() < DETECT_BALL_CONSTANT){
+                            index(1); 
+                        }
+                    }
+                }
+                ball_shoot_queue = 0; 
+                sis(); 
+            }
         }
-
-        if(controller.get_digital(DIGITAL_R1) && !R1){ 
-            while(line_sensor.get_value() > DETECT_BALL_CONSTANT){ //balls needs to be indexed already
-
-            }    
-        }
-        
     }
-
-
 }
