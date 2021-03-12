@@ -1,8 +1,8 @@
 #ifndef INTAKE_H_
 #define INTAKE_H_
 
-#include "PID.h"
 #include "Config.h"
+#include "PID.h"
 
 #define INTAKE_MAX_VOLTAGE 127.0f
 #define DETECT_BALL_CONSTANT 2300
@@ -18,5 +18,14 @@ namespace Intake{
     void sis(); 
     void ASM(void* param);
 }
+
+class AutoIntake : public PID{
+    public: 
+        
+        index(); 
+        sis(); 
+        void auton_ASNI(); 
+        void auton_ASI(); 
+};
 
 #endif
