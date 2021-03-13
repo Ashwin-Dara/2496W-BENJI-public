@@ -37,10 +37,19 @@ void Odometry::stop_tracking(){
     run_odom_task = false; 
 }
 
-int Odometry::get_X_pos(){
+int Odometry::get_X_pos() const{
     return x_coord; 
 }
 
-int Odometry::get_Y_pos(){
+int Odometry::get_Y_pos() const{
     return y_coord; 
+}
+
+void drive_to_point(const Odometry &odom, Point &coord, int max_velocity, int ms){
+    coord.set_current_point(odom);
+    float heading_target = coord.get_heading(); 
+   
+    PID heading_pid(HEADING_KP, HEADING_KI, HEADING_KD, HEADING_SR);
+    PID linear_pid(ODOM_LIN_KP, ODOM_LIN_KI, ODOM_LIN_KD, ODOM_LIN_SR);
+
 }

@@ -30,9 +30,9 @@ class Drive : public PID {
         
         void init();
 
-        void relative_move(int set, int maxVelocity, int maxTime); 
+        void relative_move(int set, int max_velocity, int max_time); 
 
-        void relative_turn(int target, int maxVelocity, int maxTime);
+        void relative_turn(int target, int max_velocity, int max_time);
 
         void terminal_data_stream();
         

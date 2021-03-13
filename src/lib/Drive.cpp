@@ -16,17 +16,17 @@ void Drive::init(){
     debug_linear_power = debug_turn_power = 0; 
 }
 
-void Drive::relative_move(int set, int maxVelocity, int maxTime){
+void Drive::relative_move(int set, int max_velocity, int max_time){
     int time = 0; 
     reset_encoder(); 
     
-    while((time * DRIVE_STANDARD_DELAY) < maxTime){
+    while((time * DRIVE_STANDARD_DELAY) < max_time){
         int position = (get_left_position() + get_right_position())/2; 
         float chassis_power = calculate_power(set, position, DRIVE_INTEGRAL_BOUND);
 
-        if(maxVelocity < PID_MAX_VOLTAGE){
-            if(abs(chassis_power) > maxVelocity){
-                chassis_power = sgn(chassis_power) * maxVelocity;
+        if(max_velocity < PID_MAX_VOLTAGE){
+            if(abs(chassis_power) > max_velocity){
+                chassis_power = sgn(chassis_power) * max_velocity;
             }
         }
         else{
@@ -54,14 +54,14 @@ void Drive::relative_move(int set, int maxVelocity, int maxTime){
     }
 }
 
-void Drive::relative_turn(int target, int maxVelocity, int maxTime){
+void Drive::relative_turn(int target, int max_velocity, int max_time){
     int time = 0; 
     imu_sensor.reset();
-    while((time * DRIVE_STANDARD_DELAY) < maxTime){
+    while((time * DRIVE_STANDARD_DELAY) < max_time){
         float position = imu_sensor.get_rotation();
         float turn_power = calculate_power(target, position, TURN_INTEGRAL_BOUND);
         
-        turn_power = std::min((int) abs(turn_power), maxVelocity);
+        turn_power = std::min((int) abs(turn_power), max_velocity);
 
         chassis_move(turn_power, -turn_power);
 

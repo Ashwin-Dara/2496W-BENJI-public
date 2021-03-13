@@ -22,8 +22,8 @@ namespace Intake{
 class AutoIntake : public PID{
     public: 
         
-        index(); 
-        sis(); 
+        void index(); 
+        void sis(); 
         void auton_ASNI(); 
         void auton_ASI(); 
 };
