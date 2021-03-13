@@ -56,9 +56,10 @@ void Drive::relative_move(int set, int max_velocity, int max_time){
 
 void Drive::relative_turn(int target, int max_velocity, int max_time){
     int time = 0; 
-    imu_sensor.reset();
+    float imu_begin = imu_sensor.get_rotation(); 
+
     while((time * DRIVE_STANDARD_DELAY) < max_time){
-        float position = imu_sensor.get_rotation();
+        float position = imu_sensor.get_rotation() - imu_begin;
         float turn_power = calculate_power(target, position, TURN_INTEGRAL_BOUND);
         
         turn_power = std::min((int) abs(turn_power), max_velocity);

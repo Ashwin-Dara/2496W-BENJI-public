@@ -13,10 +13,13 @@
 #define HEADING_KI 0.12f
 #define HEADING_KD 0.0f
 #define HEADING_SR 1.4f
+#define HEADING_IB 25
 #define ODOM_LIN_KP 2.8f
 #define ODOM_LIN_KI 0.4f
 #define ODOM_LIN_KD 0.01f
 #define ODOM_LIN_SR 2.0f 
+#define ODOM_BIAS 0.3f
+#define ODOM_BIAS_CAP 3.8f 
 
 extern std::shared_ptr<Rotation> odom_right; 
 extern std::shared_ptr<Rotation> odom_left; 
