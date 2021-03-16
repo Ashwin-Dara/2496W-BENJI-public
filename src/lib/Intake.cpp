@@ -78,3 +78,40 @@ namespace Intake{
         }
     }
 }
+
+void AutoIntake::index(){
+    Intake::index(1);
+    intake_move(INTAKE_MAX_VOLTAGE); 
+}
+
+void AutoIntake::sis(){
+    Intake::sis(); 
+    intake_move(0);
+}
+
+void AutoIntake::auton_ASNI(){
+    int time = 0; 
+    while(line_sensor.get_value() < DETECT_BALL_CONSTANT && time < 20){
+        Intake::index(1); 
+        time += 20;
+    }
+    outake.move(127); 
+    pros::delay(650);
+    outake.move(0);
+}
+
+void AutoIntake::auton_ASI(){
+    int time = 0; 
+    while(line_sensor.get_value() < DETECT_BALL_CONSTANT && time < 20){
+        Intake::index(1); 
+        time += 20;
+    }
+    outake.move(127); 
+    pros::delay(650);
+    outake.move(0);
+    time = 0; 
+    while(line_sensor.get_value() < DETECT_BALL_CONSTANT && time < 20){
+        Intake::index(1); 
+        time += 20;
+    }
+}

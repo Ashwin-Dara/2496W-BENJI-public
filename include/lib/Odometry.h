@@ -35,7 +35,7 @@ class Odometry {
 
     public: 
         Odometry();
-        void begin_tracking(); 
+        void begin_tracking(void); 
         void stop_tracking(); 
         int get_X_pos() const; 
         int get_Y_pos() const;  
@@ -43,6 +43,5 @@ class Odometry {
 };
 
 void drive_to_point(const Odometry &odom, Point &coord, int max_velocity = 110, int ms = 7000); 
-
 
 #endif

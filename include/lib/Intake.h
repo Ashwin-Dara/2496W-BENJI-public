@@ -19,9 +19,8 @@ namespace Intake{
     void ASM(void* param);
 }
 
-class AutoIntake : public PID{
+class AutoIntake {
     public: 
-        
         void index(); 
         void sis(); 
         void auton_ASNI(); 

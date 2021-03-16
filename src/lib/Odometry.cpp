@@ -11,7 +11,7 @@ Odometry::Odometry(){
     run_odom_task = false; 
 }
 
-void Odometry::begin_tracking(){
+void Odometry::begin_tracking(void){
     run_odom_task = true; 
     while(1){
         prev_s = (odom_right->get_position() + odom_left->get_position()) / 2; 
