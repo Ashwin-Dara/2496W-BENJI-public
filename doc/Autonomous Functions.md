@@ -50,3 +50,17 @@ void sample_auton(){
   drive_to_point(drive_odom, coord, 100, 2000); //moving to th point with max speed of 100 and settle time of 2 sec
 }
 ```
+
+
+## Intake Functions
+`void index(1);`
+Intakes and indexes the balls when fielding.
+
+`void sis();`
+Stops all of the intake subsystems and sets it to a power of zero.
+
+`void auton_ASNI();`
+Shoots the ball and does not index the second ball 
+
+`void auton_ASI();`
+Shoots the ball and intakes if there is another ball within the robot. 
