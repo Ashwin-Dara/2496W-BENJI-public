@@ -1,5 +1,5 @@
 # 2496W-BENJI-public
-This is the code for VRC team 2496W for the 20202-2021 season "Change Up", located in Irvine, California. We used the PROS CLI (3.14) developed by Purdue University to write the software of our robot, which we decided to name "BENJI." Here is the official PROS documentation: https://pros.cs.purdue.edu/v5/
+This is the code for VRC team 2496W for the 20202-2021 season "Change Up", located in Irvine, California. We used the PROS CLI (3.14) developed by Purdue University to write the software of our robot, which we decided to name "BENJI." Here is the official PROS documentation to reference some of the syntax within this project: https://pros.cs.purdue.edu/v5/
 
 
 ## Project Structure 
