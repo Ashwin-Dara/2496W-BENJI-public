@@ -44,6 +44,7 @@ The robot consists of various subsystem and the specific controllers we will be 
 
 - Aayush S. (9th; 8838D, 2496W)
   - Config.cpp, Tuned Autonomous Movements
+  
 
 **Credits**
 
