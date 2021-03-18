@@ -33,3 +33,20 @@ drive.relative_turn(45, 110, 1000);
 
 Here is an example: 
 
+```javascript
+Odometry drive_odom; //instantiating the Odometry classs
+Point coord(0, 0); //instantiating the Point class with current coordinates 
+
+void odom_task(){ //odometry tracking task function needs to be static
+  drive_odom.begin_tracking();
+}
+
+
+void sample_auton(){
+  pros::Task odometry_tracking(odom_task); //begins the task 
+  
+  coord.set_req_point((int)inches_to_ticks(24), (int)inches_to_ticks(12));  //setting the req points
+  
+  drive_to_point(drive_odom, coord, 100, 2000); //moving to th point with max speed of 100 and settle time of 2 sec
+}
+```
