@@ -6,6 +6,19 @@ This is the code for VRC team 2496W for the 20202-2021 season "Change Up", locat
 
 The robot consists of various subsystem and the specific controllers we will be using in those subsystems are inherited. E.g., the Chassis uses a PID controller, so the PID class is inherited by the "Drive" class. 
 
+## File Contents 
+
+- main.cpp: main function as per the standard VEX project structure. Includes main operator control function. 
+- Config.cpp: constructors for all of the electronics used on the robot.
+- Drive.cpp: hosts the autonomous move functions and chassis usercontrol.
+- Intake.cpp: holds the autonomous and usercontrol functions for intake/shooter subsystem.
+- MAFilter.cpp: moving average filter for the IMU. 
+- Odometry.cpp: includes the drive to point function and the odometry class, which tracks the absolute position of the robot. 
+- PID.cpp: PID controller class definition. 
+- Point.cpp: contains X and Y make the Odometry class less cluttered. Inherited by the Odometry Class. 
+- Scripts: holds the code for the different autonomous paths.  
+
+
 ## Subsystem Configurations
 
 - Chassis: 4 200RPM Motors with a speed gear ratio (5:3). 3.25 omni-wheels is the wheel size.  
