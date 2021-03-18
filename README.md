@@ -36,7 +36,7 @@ The robot consists of various subsystem and the specific controllers we will be 
 ## Credits and Further Reading
 
 **Contributors**
-- Ashwin D.(12th; 2496R, 2496J, 2496W, 2496W)
+- Ashwin D. (12th; 2496R, 2496J, 2496W, 2496W)
   - Odometry Functions, Point Class, Drive Functions, Moving Average Filter
 
 - Andres G. (10th; 2496R, 2496W)
@@ -44,3 +44,9 @@ The robot consists of various subsystem and the specific controllers we will be 
 
 - Aayush S. (9th; 8838D, 2496W)
   - Config.cpp, Tuned Autonomous Movements
+
+**Credits**
+
+https://www.cs.princeton.edu/courses/archive/fall11/cos495/COS495-Lecture5-Odometry.pdf -- referenced the odometry equations from this presentation 
+https://www.vexforum.com/t/a-pid-controller-in-robotc/20105/2 -- referenced the PID controller (Jpearman's post)
+https://www2.ece.ohio-state.edu/~passino/Lab3.pdf -- referenced for the Integral-Controller anti-windup and "slew"
