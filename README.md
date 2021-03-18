@@ -33,3 +33,14 @@ The robot consists of various subsystem and the specific controllers we will be 
 - Point.cpp: contains X and Y make the Odometry class less cluttered. Inherited by the Odometry Class. 
 - Scripts: holds the code for the different autonomous paths.  
 
+## Credits and Further Reading
+
+**Contributors**
+- Ashwin D.(12th; 2496R, 2496J, 2496W, 2496W)
+  - Odometry Functions, Point Class, Drive Functions, Moving Average Filter
+
+- Andres G. (10th; 2496R, 2496W)
+  - Autoshoot Logic, Chassis Usercontrol, PID.cpp, Slew Movement
+
+- Aayush S. (9th; 8838D, 2496W)
+  - Config.cpp, Tuned Autonomous Movements
