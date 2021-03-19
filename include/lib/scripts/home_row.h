@@ -17,5 +17,6 @@ extern Odometry drive_odom;
 
 void tracking_task(); 
 void right_blue_homerow();
+void left_red_homerow(); 
 
 #endif
