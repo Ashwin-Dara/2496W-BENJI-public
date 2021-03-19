@@ -61,3 +61,7 @@ float get_right_position(){
 float get_left_position(){
     return -left_encoder.get_position(); 
 }
+
+float inches_to_ticks(int inches){
+    return (float) ((180/3.1415) * (inches) * (3/5) * (3.25/2));
+}

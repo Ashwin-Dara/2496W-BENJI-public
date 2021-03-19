@@ -48,6 +48,7 @@ void chassis_move(float right_velocity, float left_velocity);
 void reset_encoder(); 
 float get_right_position();
 float get_left_position();
+float inches_to_ticks(int inches); 
  
 int sgn(float x);
 
