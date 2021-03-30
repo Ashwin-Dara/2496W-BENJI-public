@@ -39,6 +39,10 @@
 
 using namespace pros; 
 
+/**
+* Setting up the electronics by creating extern class. 
+*/
+
 extern Controller controller; 
 
 extern Imu imu_sensor; 
