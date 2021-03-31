@@ -2,8 +2,7 @@
 #define CONFIG_H_
 
 /**
-* Including all of the libraries that would be used throughout the rest of the code 
-* will happen at the top of the file. 
+* Including all of the libraries that would be used throughout the rest of the code. 
 * 
 * "main.h" -- required to be included for this file to be considered a part of the 
 *             the PROS project. This will be a part of all files
@@ -27,13 +26,16 @@ using namespace pros;
 * Defining the port numbers of the robot's subsystems. 
 * 
 * Motors for the chassis are indicated by by "DRIVE". The chassis is a four motor drive. 
+* 
 * The intake will be indicated by "INTAKE". There are 2 intake motors situated on the 
 * front of the motor. 
 *
 * There are two rotation sensors for each side of the drive and have the keyword "ENC."
+* 
 * The remaining motors are for the indexer (uptake) and the fly-wheel shooter (outtake). 
-* There are is one line sensor for detecting the ball within the robot. 
-* Finally, there is an IMU sensor. 
+*
+* There are is one line sensor for detecting the ball within the robot. Finally, there is 
+* an IMU sensor. 
 */
 
 //RIGHT CHASSIS MOTOR PORTS
